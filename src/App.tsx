@@ -64,6 +64,9 @@ function App() {
           <div>
             <p>Connected to {address}</p>
             <p>Chain ID: {chain?.id}</p>
+            {![1,5].includes(chain?.id as number) && (
+              <p className="card-text">Kindly switch to supportive chains (Etherum mainnet , goerli)</p>
+            )}
             <p>Balance: {balance?.formatted}</p>
             <button onClick={() => disconnect()}>Disconnect</button>
             <div>
